@@ -1,0 +1,9 @@
+<button (click)="getDataFromApi()">Get Data</button>
+
+<ul *ngFor="let data of data | paginate: { itemsPerPage: 20, currentPage: page, totalItems:totalLength }" >
+  <li>{{data.id}}</li>
+  <li>{{data.title}}</li>
+  <li>{{data.body}}</li>
+</ul>
+
+<pagination-controls (pageChange)="page = $event"></pagination-controls>
